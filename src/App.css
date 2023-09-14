@@ -27,6 +27,13 @@
 .App-link {
   color: #61dafb;
 }
+.App-item{
+  border:2px solid brown;
+  margin: 3px;
+  padding: 3px;
+  font-family: "Arial Narrow";
+  text-decoration-color:greenyellow;
+}
 
 @keyframes App-logo-spin {
   from {

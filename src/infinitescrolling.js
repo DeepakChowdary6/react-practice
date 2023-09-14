@@ -1,9 +1,9 @@
 import { useState, useCallback, useRef } from 'react';
 import './App.css';
-import InfiniteScroll from './InfiniteScroll';
+import Crud from './crud';
 
 
-function App() {
+function Infinitescrolling() {
      const myref=useRef()
     const observer=useRef(null);
 
@@ -67,4 +67,4 @@ function App() {
    </>)
 }
 
-export default App;
+export default Infinitescrolling;
