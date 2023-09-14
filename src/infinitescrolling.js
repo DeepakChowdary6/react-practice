@@ -2,7 +2,7 @@ import { useState, useCallback, useRef } from 'react';
 import './App.css';
 import Crud from './crud';
 
-
+//this is backend driven approach
 function Infinitescrolling() {
      const myref=useRef()
     const observer=useRef(null);
