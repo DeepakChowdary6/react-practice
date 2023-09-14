@@ -11,6 +11,10 @@ import array from './array.js'
 
 export default function Crud(props) {
      const [data,setdata]=useState(array);
+     const newid=useRef(null);
+     const newname=useRef(null);
+     const newage=useRef(null);
+
     const handledelete=(id)=>{
             const updatedData = data.filter(item => item.id !== id);
             setdata(updatedData);
@@ -36,9 +40,9 @@ export default function Crud(props) {
         }
     }
     const handleaddition=()=>{
-        let new_id=document.getElementById("newid").value;
-        let new_name=document.getElementById("newname").value;
-        let new_age=document.getElementById("newage").value;
+        let new_id=newid.current.value;
+        let new_name=newname.current.value;
+        let new_age=newage.current.value;
         if(data.findIndex(item=>item.id===new_id)===-1){
             let new_obj={id:new_id,Name:new_name,Age:new_age};
             setdata((prevState)=>[...prevState,new_obj])
@@ -62,10 +66,10 @@ export default function Crud(props) {
                     Age={item.Age}
                     id={item.id} />) }
                 </table>
-                <div><span>id</span><input id="newid" type="text"/>
-                    <span>name</span><input id="newname" type="text"/>
-                    <span>age</span><input id="newage" type="text"/>
-                    <button onClick={()=>{handleupdate(document.getElementById("newid").value,document.getElementById("newname").value,document.getElementById("newage").value)}}>update</button>
+                <div><span>id</span><input ref={newid} type="text"/>
+                    <span>name</span><input ref={newname} type="text"/>
+                    <span>age</span><input ref={newage} type="text"/>
+                    <button onClick={()=>{handleupdate(newid.current.value,newname.current.value,newage.current.value)}}>update</button>
                     <button onClick={handleaddition}>add</button>
 
                 </div>
